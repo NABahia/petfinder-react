@@ -4,7 +4,7 @@ Aplicación web desarrollada en **React + TypeScript** para reportar y encontrar
 
 ## 🌐 Demo / Webapp desplegada
 
-- **Frontend (Firebase Hosting):** `https://tu-project-id-de-firebase.web.app` *(Reemplazar con la URL final una vez desplegado)*
+- **Frontend (Firebase Hosting):** [`https://petfinder-react-6b252.web.app`](https://petfinder-react-6b252.web.app)
 - **Backend API:** Configurado mediante la variable `API_BASE_URL` en [`src/lib/api.ts`](./src/lib/api.ts) (por defecto `http://localhost:3000`).
 
 ---
@@ -62,12 +62,15 @@ src/
 
 1. Creá un proyecto en [Firebase Console](https://console.firebase.google.com/).
 2. En la raíz de este proyecto, ejecutá:
+
    ```bash
    npx firebase-tools login
    npx firebase-tools init hosting:github
    ```
+
    - Seleccioná tu proyecto de Firebase.
    - Directorio público: `dist`
    - Configurar como Single-Page App (rewrite todas las URLs a `/index.html`): **Yes**
    - Script de compilación antes del deploy: `npm ci && npm run build`
+
 3. En tu repositorio de GitHub (`Settings -> Secrets and variables -> Actions`), agregá el secret `API_BASE_URL` con la URL pública de tu backend desplegado (por ejemplo en Render o Railway).
